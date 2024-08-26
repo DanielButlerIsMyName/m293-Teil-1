@@ -1,6 +1,3 @@
-# Here's a `README.md` file for your project:
-
-```markdown
 # The Funniest Website Ever!
 
 Welcome to **The Funniest Website Ever**! This project is a fun and interactive React app designed to bring a smile to your face. It features humorous content, playful design elements, and a responsive layout.
@@ -64,4 +61,3 @@ Once the project is up and running, you can explore the following features:
 ---
 
 Made with ❤️ and a lot of humor.
-```
