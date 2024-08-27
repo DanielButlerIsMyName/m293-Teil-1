@@ -1,13 +1,18 @@
 import { useState } from 'react'
 import './App.css'
+import kittenImage from './assets/kitten.jpeg'
+import catImage from './assets/cat.jpg'
 
 function App() {
     const [count, setCount] = useState(0)
+    const [negativeCount, setNegativeCount] = useState(100)
 
     const handleClick = () => {
-        setCount(count + 1);
+        setCount(prev => prev + 1);
     };
-
+    const handleNegativeClick = () => {
+        setNegativeCount(prev => prev - 1);
+    };
     return (
         <>
             <header>
@@ -19,12 +24,18 @@ function App() {
             <main>
                 <section>
                     <p>Why don’t skeletons fight each other? They don’t have the guts!</p>
-                    <p>Did you hear about the cheese factory that exploded in France? There was nothing left but de Brie.</p>
+                    <p>Did you hear about the cheese factory that exploded in France? There was nothing left but de
+                        Brie.</p>
                 </section>
 
                 <section>
                     <h4>Here’s a picture of a very serious cat:</h4>
-                    <img src="https://placekitten.com/300/200" alt="A very serious cat" />
+                    <img src={kittenImage} alt="A very serious cat"/>
+                </section>
+
+                <section>
+                    <h4>And a second very serious cat:</h4>
+                    <img src={catImage} alt="A very serious cat"/>
                 </section>
 
                 <section>
@@ -33,18 +44,23 @@ function App() {
                 </section>
 
                 <section>
+                    <h5>Same deal but inverted:</h5>
+                    <button onClick={handleNegativeClick}>Click me! ({negativeCount} clicks)</button>
+                </section>
+
+                <section>
                     <h6>Now, let's fill out a very important form:</h6>
                     <form>
                         <label>
                             What's your favorite joke?
-                            <input type="text" name="joke" placeholder="Type your joke here..." />
+                            <input type="text" name="joke" placeholder="Type your joke here..."/>
                         </label>
-                        <br />
+                        <br/>
                         <label>
                             Rate this website (1-10):
-                            <input type="number" name="rating" min="1" max="10" />
+                            <input type="number" name="rating" min="1" max="10"/>
                         </label>
-                        <br />
+                        <br/>
                         <button type="submit">Submit</button>
                     </form>
                 </section>
